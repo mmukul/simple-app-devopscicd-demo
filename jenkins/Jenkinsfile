@@ -28,10 +28,11 @@ pipeline {
             }
         }
 
-        stage ('SonarQube - SAST') {
-           steps {
-           withSonarQubeEnv('sonar')
-               sh "mvn sonar:sonar"
+       stage('SonarQube analysis') {
+            steps {
+                withSonarQubeEnv(installationName: 'SonarQube') {
+                    sh 'mvn sonar:sonar'
+                }
             }
         }
 
