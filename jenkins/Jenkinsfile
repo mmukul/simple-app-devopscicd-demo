@@ -11,13 +11,13 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('BuildCode') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
 
-       stage('SonarQube analysis') {
+       stage('SonarQubeAnalysis') {
             steps {
                 withSonarQubeEnv('sonarqube') {
                     sh 'mvn sonar:sonar'
@@ -25,7 +25,7 @@ pipeline {
             }
         }
 
-        stage('Test') {
+        stage('TestCode') {
             steps {
                 sh 'mvn test'
             }
@@ -36,7 +36,7 @@ pipeline {
             }
         }
 
-        stage('Deliver') {
+        stage('Deploy') {
             steps {
                 sh 'chmod +x jenkins/scripts/deliver.sh'
                 sh './jenkins/scripts/deliver.sh'
