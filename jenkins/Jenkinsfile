@@ -45,23 +45,9 @@ pipeline {
             }
         }
 
-        stage ('Vulnerability Scan') {
-            steps {
-                parallel(
-                "Vulnerability Scanner for Container Images":{
-                    /* curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin */
-                    sh 'grype docker.io/webgoat/goatandwolf --file reports/vulnerability-scan-report.json'
-                },
-                "Trivy Scan":{
-                    sh "trivy image docker.io/webgoat/webgoat --security-checks vuln > reports/trivy_report.json"
-                }
-            )
-        }
-
     post {
         always {
             publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'reports', reportFiles: 'vulnerability-scan-report.json', reportName: 'Vulnerability Scan Report', reportTitles: 'Vulnerability Scan Report', useWrapperFileDirectly: true])
             publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'reports', reportFiles: 'trivy_report.json', reportName: 'Trivy Vulnerability Report', reportTitles: 'Trivy Vulnerability Report', useWrapperFileDirectly: true])
         }
      }
-  }
