@@ -1,5 +1,8 @@
 #!/bin/bash
 
+## Download Centos 7 from https://centos.excellmedia.net/7.9.2009/isos/x86_64/
+## Download vmware workstation player from https://www.vmware.com/go/getplayer-win
+
 ## Install Jenkins on Centos 7
 
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo && \
