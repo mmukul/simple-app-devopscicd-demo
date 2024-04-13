@@ -44,10 +44,3 @@ pipeline {
                 }
             }
         }
-
-    post {
-        always {
-            publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'reports', reportFiles: 'vulnerability-scan-report.json', reportName: 'Vulnerability Scan Report', reportTitles: 'Vulnerability Scan Report', useWrapperFileDirectly: true])
-            publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'reports', reportFiles: 'trivy_report.json', reportName: 'Trivy Vulnerability Report', reportTitles: 'Trivy Vulnerability Report', useWrapperFileDirectly: true])
-        }
-     }
