@@ -1,18 +1,24 @@
 #!/bin/bash
 
-## Download Centos 7 from https://centos.excellmedia.net/7.9.2009/isos/x86_64/
-## Download vmware workstation player from https://www.vmware.com/go/getplayer-win
+SRE=`cat /var/lib/jenkins/secrets/initialAdminPassword`
 
-## Install Jenkins on Centos 7
+# Install on Jenkins Master Node
+yum remove -y java
 
-sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo && \
-sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key && \
+yum install -y vim wget epel-release curl java-11-openjdk-devel
 
-sudo yum install -y fontconfig java-11-openjdk && \
-sudo yum install -y jenkins && \
- 
-sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp && \
+wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo --no-check-certificate
+
+rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+
+yum install -y jenkins
+
+systemctl start jenkins
+systemctl enable jenkins
+systemctl status jenkins
+
+firewall-cmd --zone=public --add-port=8080/tcp --permanent
+
 sudo firewall-cmd --reload
 
-sudo systemctl start jenkins && \
-sudo systemctl enable jenkins
+echo "Jenkins password is $SRE"
