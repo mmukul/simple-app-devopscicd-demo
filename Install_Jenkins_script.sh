@@ -7,6 +7,7 @@ SRE=`cat /var/lib/jenkins/secrets/initialAdminPassword`
 
 yum remove -y java*
 yum remove -y jenkins
+rm -rf /etc/yum.repos.d/jenkins.repo
 
 
 
