@@ -7,7 +7,7 @@ yum remove -y java
 
 yum install -y vim wget epel-release curl java-11-openjdk-devel
 
-wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo --no-check-certificate
+wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 
 rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
 
