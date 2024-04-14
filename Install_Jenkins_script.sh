@@ -2,9 +2,15 @@
 
 SRE=`cat /var/lib/jenkins/secrets/initialAdminPassword`
 
-# Install on Jenkins Master Node
-yum remove -y java
 
+## Remove Java and Jenkins
+
+yum remove -y java*
+yum remove -y jenkins
+
+
+
+# Install on Jenkins Master Node
 yum install -y vim wget epel-release curl java-11-openjdk-devel
 
 wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
