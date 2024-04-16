@@ -9,6 +9,7 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 .vscode/
+Jenkinsfile_sample_2
 
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
 !/.mvn/wrapper/maven-wrapper.jar
