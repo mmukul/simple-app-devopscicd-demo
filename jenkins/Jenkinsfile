@@ -1,6 +1,7 @@
 pipeline {
     agent any
 
+    // Jenkins Pipeline
     stages {
         stage ('Initialize Environment') {
             steps {
