@@ -11,45 +11,39 @@ pipeline {
             }
         }
 
-        stages {
+		// Checkout
         stage('Get Latest Code') {
-            steps {
+			steps {
+		        // Add steps to clone the repository
                 echo 'Get Latest Code'
-                git 'https://github.com/mmukul/Jenkins_Sample_Java_Project.git'
-            }
-        }
-		stage('Clean the Workspace') {
+                git 'https://github.com/mmukul/simple-app-devopscicd-demo.git'
+			}
+		}
+
+        stage('Clean the Workspace') {
             steps {
                 echo 'Clean the Workspace'
                 sh "mvn clean"
             }
         }
-		stage('Compile') {
+
+        // Compile
+        stage('Compile') {
             steps {
                 echo 'Compile'
                 sh "mvn compile"
             }
         }
-		stage('Test') {
+
+        stage('Test') {
             steps {
                 echo 'Test'
                 sh "mvn test"
 				
             }
         }
-		stage('Package') {
-            steps {
-                echo 'Package the Solution'
-                sh "mvn package"
+		
+		
+		// End pipeline
             }
         }
-		
-		// Delivery stage
-		stage('Deploy to PROD') {
-            steps {
-                input 'Do you want to continue deployment to PROD?'
-				echo 'Deploy to PROD'		
-            }
-        }	
-    }
-}

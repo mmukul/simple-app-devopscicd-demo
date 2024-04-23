@@ -1,0 +1,41 @@
+pipeline {
+    agent any
+
+    stages {
+        stage ('Initialize Environment') {
+            steps {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "MAVEN_HOME = ${MAVEN_HOME}"
+                    ''' 
+            }
+        }
+
+		// Checkout
+        stage('Get Latest Code') {
+			steps {
+		        // Add steps to clone the repository
+                echo 'Get Latest Code'
+                git 'https://github.com/mmukul/simple-app-devopscicd-demo.git'
+			}
+		}
+
+        stage('Clean the Workspace') {
+            steps {
+                echo 'Clean the Workspace'
+                sh "mvn clean"
+            }
+        }
+
+        // Compile
+        stage('Compile') {
+            steps {
+                echo 'Compile'
+                sh "mvn compile"
+            }
+        }
+		
+		
+		// End pipeline
+            }
+        }
