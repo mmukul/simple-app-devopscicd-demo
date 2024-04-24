@@ -1,0 +1,12 @@
+pipeline {
+    agent any
+
+    // Jenkins Pipeline
+    stages {
+        stage ('Welcome') {
+            steps {
+                    echo "Welcome to DevOps Class"
+            }
+        }
+    }
+}
