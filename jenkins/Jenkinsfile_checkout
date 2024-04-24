@@ -2,25 +2,13 @@ pipeline {
     agent any
 
     stages {
-        stage ('Initialize Environment') {
-            steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "MAVEN_HOME = ${MAVEN_HOME}"
-                    ''' 
-            }
-        }
-
 		// Checkout
         stage('Get Latest Code') {
 			steps {
 		        // Add steps to clone the repository
                 echo 'Get Latest Code'
-                git 'https://github.com/mmukul/simple-app-devopscicd-demo.git'
+                git url: 'https://github.com/mmukul/simple-app-devopscicd-demo.git'
 			}
 		}
-		
-		
-		// End pipeline
-            }
-        }
+    }
+}
