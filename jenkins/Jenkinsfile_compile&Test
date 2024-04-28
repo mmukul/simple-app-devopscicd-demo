@@ -7,12 +7,11 @@ pipeline {
 
     stages {
         stage('Get Latest Code') {
-			steps {
-		        // Add steps to clone the repository
+	   steps {
                 echo 'Get Latest Code'
                 git 'https://github.com/mmukul/simple-app-devopscicd-demo.git'
-			}
-		}
+	    }
+	}
 
         stage('Clean the Workspace') {
             steps {
