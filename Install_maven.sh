@@ -1,4 +1,7 @@
 #!/bin/bash
+
+# Run on Jenkins Master and Jenkins Slave
+
 wget http://mirrors.ibiblio.org/apache/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz -P /opt
 cd /opt
 
