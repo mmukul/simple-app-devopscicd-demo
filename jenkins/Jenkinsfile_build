@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+    tools {
+        maven "MAVEN_HOME"
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                git 'https://github.com/mmukul/simple-app-devopscicd-demo.git'
+                sh "mvn -Dmaven.test.failure.ignore=true clean package"
+            }
+        }
+    }
+}

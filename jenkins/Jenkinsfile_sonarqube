@@ -1,0 +1,41 @@
+pipeline {
+    agent any
+
+    tools {
+        maven "MAVEN_HOME"
+    }
+
+    stages {
+        stage('BuildCode') {
+            steps {
+                sh 'mvn -B -DskipTests clean package'
+            }
+        }
+
+       stage('SonarQubeAnalysis') {
+            steps {
+                withSonarQubeEnv('sonarqube') {
+                    sh 'mvn sonar:sonar'
+                }
+            }
+        }
+
+        stage('TestCode') {
+            steps {
+                sh 'mvn test'
+            }
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh 'chmod +x jenkins/scripts/deliver.sh'
+                sh './jenkins/scripts/deliver.sh'
+                    }
+                }
+            }
+        }

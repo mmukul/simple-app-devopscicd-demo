@@ -1,17 +1,11 @@
 pipeline {
     agent any
 
-    stages {
-        stage ('Initialize Environment') {
-            steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "MAVEN_HOME = ${MAVEN_HOME}"
-                    ''' 
-            }
-        }
+    tools {
+        maven "MAVEN_HOME"
+    }
 
-		// Checkout
+    stages {
         stage('Get Latest Code') {
 			steps {
 		        // Add steps to clone the repository
@@ -34,8 +28,5 @@ pipeline {
                 sh "mvn compile"
             }
         }
-		
-		
-		// End pipeline
-            }
-        }
+    }
+}

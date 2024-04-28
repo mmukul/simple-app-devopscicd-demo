@@ -1,18 +1,11 @@
 pipeline {
     agent any
 
-    // Jenkins Pipeline
-    stages {
-        stage ('Initialize Environment') {
-            steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "MAVEN_HOME = ${MAVEN_HOME}"
-                    ''' 
-            }
-        }
+    tools {
+        maven "MAVEN_HOME"
+    }
 
-        stages {
+    stages {
         stage('Get Latest Code') {
             steps {
                 echo 'Get Latest Code'
