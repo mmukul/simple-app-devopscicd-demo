@@ -42,7 +42,7 @@ pipeline {
 		stage('Deploy to PROD') {
             steps {
                 input 'Do you want to continue deployment to PROD?'
-				echo 'Deploy to PROD'		
+		echo 'Deploy to PROD'		
             }
         }	
     }
