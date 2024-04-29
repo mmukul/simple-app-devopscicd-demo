@@ -21,3 +21,9 @@ source /etc/profile.d/maven.sh
 
 
 ### Configure Maven and JDK setting on Jenkins Console ###
+
+Managed Jenkins --> Tools --> JDK installations
+  Name = JAVA_HOME 
+  JAVA_HOME = /usr/lib/jvm/jre-openjdk
+  
+Managed Jenkins --> Tools --> Maven installations
