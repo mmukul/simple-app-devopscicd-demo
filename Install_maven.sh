@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Run on Jenkins Master and Jenkins Slave using CLI on Linux Terminal
+### Run on Jenkins Master and Jenkins Slave using CLI on Linux Terminal ###
 
 wget http://mirrors.ibiblio.org/apache/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz -P /opt
 cd /opt
@@ -19,4 +19,5 @@ sudo chmod +x /etc/profile.d/maven.sh
 
 source /etc/profile.d/maven.sh
 
-# Configure Maven and JDK setting on Jenkins Console
+
+### Configure Maven and JDK setting on Jenkins Console ###
