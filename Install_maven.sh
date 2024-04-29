@@ -27,3 +27,5 @@ Managed Jenkins --> Tools --> JDK installations
   JAVA_HOME = /usr/lib/jvm/jre-openjdk
   
 Managed Jenkins --> Tools --> Maven installations
+   Name = MAVEN_HOME
+   MAVEN_HOME = /opt/maven
