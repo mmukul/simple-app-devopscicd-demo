@@ -1,0 +1,5 @@
+## Remove Java and Jenkins from Master
+
+yum remove -y java*
+yum remove -y jenkins
+rm -rf /etc/yum.repos.d/jenkins.repo
