@@ -1,0 +1,3 @@
+<script type="text/javascript" src="https://testimonial.to/js/iframeResizer.min.js"></script>
+<iframe id="testimonialto-embed-text--NwjZ9p6vdxNnC2Tqzpe" src="https://embed-v2.testimonial.to/t/-NwjZ9p6vdxNnC2Tqzpe?design=left-aligned&fontFamily=Inter&fontColor=000000&bgColor=ffffff&borderColor=ABB8C3&starColor=FDCC0D&shadowSize=shadow-none&showBorder=no&showPadding=yes&borderRadius=rounded-lg&borderWidth=border" frameborder="0" scrolling="no" width="100%"></iframe>
+<script type="text/javascript">iFrameResize({log: false, checkOrigin: false}, "#testimonialto-embed-text--NwjZ9p6vdxNnC2Tqzpe");</script>
