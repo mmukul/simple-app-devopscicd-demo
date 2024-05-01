@@ -1,4 +1,3 @@
-#!/bin/bash
 
 SRE=`cat /var/lib/jenkins/secrets/initialAdminPassword`
 
@@ -8,7 +7,6 @@ SRE=`cat /var/lib/jenkins/secrets/initialAdminPassword`
 yum remove -y java*
 yum remove -y jenkins
 rm -rf /etc/yum.repos.d/jenkins.repo
-
 
 
 ## Install on Jenkins Master Node
