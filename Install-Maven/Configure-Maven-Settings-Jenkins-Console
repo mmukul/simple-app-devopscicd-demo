@@ -1,0 +1,7 @@
+# Configure Maven setting on Jenkins Console
+
+ 
+Managed Jenkins --> Tools --> Maven installations
+
+   Name = MAVEN_HOME
+   MAVEN_HOME = /opt/maven
