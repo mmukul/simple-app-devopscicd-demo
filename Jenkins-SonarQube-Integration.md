@@ -1,9 +1,9 @@
-Proceed as follows:
+## Jenkins for SonarQube integration
 
 1.  Install the SonarQube extension for Jenkins.
 2.  Install the SonarScanner from Jenkins.
 
-## [Installing the SonarQube extension for Jenkins](https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/ci-integration/jenkins-integration/global-setup/#install-extension "Installing the SonarQube extension for Jenkins")
+### [Installing the SonarQube extension for Jenkins](https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/ci-integration/jenkins-integration/global-setup/#install-extension "Installing the SonarQube extension for Jenkins")
 
 [SonarQube extension for Jenkins](https://plugins.jenkins.io/sonar/ "SonarQube extension for Jenkins") version 2.11 or later is required.
 
