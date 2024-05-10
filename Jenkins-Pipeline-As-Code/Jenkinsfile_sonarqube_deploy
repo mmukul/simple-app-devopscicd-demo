@@ -8,8 +8,7 @@ pipeline {
     stages {
         stage('Get Latest Code') {
 	        steps {
-                echo 'Get Latest Code'
-                git 'https://github.com/mmukul/simple-app-devopscicd-demo.git'
+                git url: 'https://github.com/mmukul/simple-app-devopscicd-demo.git'
 	    }
 	}
 
@@ -34,6 +33,16 @@ pipeline {
             }
         }
 
+        stage("Quality Gate") {
+            steps {
+                timeout(time: 1, unit: 'HOURS') {
+                    // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
+                    // true = set pipeline to UNSTABLE, false = don't
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
+
         stage('Package') {
             steps {
                 sh "mvn package"
@@ -45,5 +54,14 @@ pipeline {
                 sh 'mvn test'
             }
         }
+
+        stage('Deploy') {
+            steps {
+                sh '''
+                mvn jar:jar install:install help:evaluate -Dexpression=project.name
+                java -jar target/my-app-2.0.1-SNAPSHOT.jar
+                '''
+                }
+            }
+        }
     }
-}

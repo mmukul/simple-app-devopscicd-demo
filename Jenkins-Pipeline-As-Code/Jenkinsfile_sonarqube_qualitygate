@@ -5,6 +5,7 @@ pipeline {
         maven "MAVEN_HOME"
     }
 
+    
     stages {
         stage('Get Latest Code') {
 	        steps {
@@ -26,7 +27,7 @@ pipeline {
             }
         }
 
-       stage('SonarQube - Code Quality') {
+        stage('SonarQube - Code Quality') {
             steps {
                 withSonarQubeEnv('sonarserver') {
                     sh 'mvn sonar:sonar'
