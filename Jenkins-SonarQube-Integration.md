@@ -1,7 +1,3 @@
-## SonarQube integration with Jenkins
-
-
-
 Proceed as follows:
 
 1.  Install the SonarQube extension for Jenkins.
