@@ -7,3 +7,11 @@ systemctl start docker
 systemctl enable docker
 
 docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 owasp/sonarqube
+
+docker images
+docker ps
+
+Once your instance is up and running, Log in to http://<IP-Address of VM>:9000 using below credentials:
+
+login: admin
+password: admin
