@@ -54,9 +54,14 @@
       </plugin>
 
       <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>3.2.5</version>
+          <configuration>
+            <!-- NOTE: Be sure to isolate the Surefire version under test from the version running the tests! -->
+            <useSystemClassLoader>false</useSystemClassLoader>
+            <useFile>false</useFile>
+            <redirectTestOutputToFile>false</redirectTestOutputToFile>
+          </configuration>
         </plugin>
 
       <plugin>
