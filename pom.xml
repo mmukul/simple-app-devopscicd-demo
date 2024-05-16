@@ -9,10 +9,11 @@
   <url>http://maven.apache.org</url>
 
   <dependencies>
+    <!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-reporting -->
     <dependency>
-      <groupId>org.junit.platform</groupId>
-      <artifactId>junit-platform-reporting</artifactId>
-      <version>1.11.0-M1</version>
+        <groupId>org.junit.platform</groupId>
+        <artifactId>junit-platform-reporting</artifactId>
+        <version>1.11.0-M1</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-report-plugin -->
