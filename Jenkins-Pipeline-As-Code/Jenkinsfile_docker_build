@@ -1,6 +1,12 @@
 pipeline {
-    agent any
+        environment {
+        registry = "YourDockerhubAccount/YourRepository"
+        registryCredential = 'dockerhub_id'
+        dockerImage = ''
+    }
 
+    agent any
+    
     tools {
         maven "MAVEN_HOME"
     }
@@ -27,7 +33,8 @@ pipeline {
         stage('Build Docker Image'){
             steps{
                 script{
-                    sh 'docker build -t smilemukul/my-app-1.0 /root/.'
+                    sh 'docker build -t smilemukul/my-app-1.0 .'
+                    sh 'docker image tag smilemukul/my-app-1.0 smilemukul/my-app-1.0:latest'
                 }
             }
         }
