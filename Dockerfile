@@ -1,4 +1,4 @@
-FROM centos:7
-RUN yum update -y
-RUN yum install –y nginx
-CMD [“echo”,”Image created”]
+FROM openjdk:8
+EXPOSE 8080
+ADD target/my-app.jar my-app.jar
+ENTRYPOINT ["java","-jar","/my-app.jar"]
