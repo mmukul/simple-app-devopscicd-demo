@@ -34,7 +34,6 @@ pipeline {
             steps{
                 script{
                     sh 'docker build -t smilemukul/my-app-1.0 .'
-                    sh 'docker image tag smilemukul/my-app-1.0 smilemukul/my-app-1.0:latest'
                 }
             }
         }
