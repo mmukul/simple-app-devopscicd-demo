@@ -1,11 +1,10 @@
 pipeline {
-        environment {
-        registry = "YourDockerhubAccount/YourRepository"
-        registryCredential = 'dockerhub_id'
-        dockerImage = ''
-    }
-
     agent any
+
+    options {
+    // Keep the 1 most recent builds
+    buildDiscarder(logRotator(numToKeepStr:'1'))
+    }
     
     tools {
         maven "MAVEN_HOME"
@@ -37,7 +36,7 @@ pipeline {
                 }
             }
         }
-        stage('Push image to Hub'){
+        stage('Push image to DockerHub'){
             steps{
                 script{
                    withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
