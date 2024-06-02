@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DI = "docker images | grep my-app | awk '{print $3}'"
+        DI = `docker images | grep my-app | awk '{print $3}'`
     }
 
     options {
