@@ -7,7 +7,7 @@ JUnit XML report.
 
 ### Want to access this Project to perform practical demo then *Follow these project steps*
 
-## Stage-01 : Install JDK and Create a Java Springboot application
+#### Stage-01 : Install JDK and Create a Java Springboot application
 
 #### Stage-02 : Install Jenkins and start Jenkins 
 Jenkins Installation Prequuisities  https://www.jenkins.io/doc/book/installing/linux/
