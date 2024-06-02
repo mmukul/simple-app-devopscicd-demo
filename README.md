@@ -10,8 +10,7 @@ JUnit XML report.
 #### Stage-01 : Install JDK and Create a Java Springboot application
 
 #### Stage-02 : Install Jenkins and start Jenkins 
-Jenkins Installation Prequuisities  https://www.jenkins.io/doc/book/installing/linux/
-1. Installation guide is available here  https://github.com/praveensirvi1212/DevSecOps-project/blob/main/Jenkins_installation.md
+1. Jenkins Installation Prequuisities
 1. After installation, install suggested plugins
 1. Open Jenkins Dashboard and install required plugins – SonarQube Scanner, Docker Pipeline and Kubernetes
 1. go to manage jenkins > manage pulgins > search for plugins > install without restart
