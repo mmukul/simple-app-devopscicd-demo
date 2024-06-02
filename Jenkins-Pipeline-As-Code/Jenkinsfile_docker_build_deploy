@@ -60,7 +60,7 @@ pipeline {
         stage('Cleanup'){
             steps{
                 script{
-                    sh 'docker rmi docker.io/openjdk smilemukul/my-app-1.0:v1 -f'
+                    sh 'docker rmi docker.io/openjdk:8 smilemukul/my-app-1.0:v1 -f'
                 }
             }
         }
