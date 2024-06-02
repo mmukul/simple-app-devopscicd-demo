@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        DI = "docker images | grep my-app | awk '{print $3}'"
+    }
 
     options {
     // Keep the 1 most recent builds
@@ -43,6 +46,13 @@ pipeline {
                    sh 'docker login -u smilemukul -p ${dockerhubpwd}'
                 }
                    sh 'docker push smilemukul/my-app-1.0:v1'
+                }
+            }
+        }
+        stage('Deploy in Container'){
+            steps{
+                script{
+                    sh 'docker run $DI'
                 }
             }
         }
