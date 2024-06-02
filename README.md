@@ -27,7 +27,9 @@ JUnit XML report.
 #### Stage-07 : Add jenkins user to docker group
  ```sh 
 sudo gpasswd -a jenkins docker
+
 OR,
+
 groupadd docker
 usermod -aG docker jenkins
 chmod 666 /var/run/docker.sock
