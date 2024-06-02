@@ -36,6 +36,7 @@ pipeline {
                 }
             }
         }
+
         stage('Push image to DockerHub'){
             steps{
                 script{
@@ -46,11 +47,20 @@ pipeline {
                 }
             }
         }
+
         stage('Deploy in Container'){
             steps{
                 script{
                     sh 'docker run smilemukul/my-app-1.0:v1'
                     echo 'Application is Successfully deployed in container'
+                }
+            }
+        }
+
+        stage('Cleanup'){
+            steps{
+                script{
+                    sh 'docker rmi smilemukul/my-app-1.0:v1'
                 }
             }
         }
