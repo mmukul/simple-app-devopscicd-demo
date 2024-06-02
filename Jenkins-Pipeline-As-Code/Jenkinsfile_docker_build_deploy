@@ -50,6 +50,7 @@ pipeline {
             steps{
                 script{
                     sh 'docker run smilemukul/my-app-1.0:v1'
+                    echo 'Application is Successfully deployed in container'
                 }
             }
         }
