@@ -7,9 +7,9 @@ JUnit XML report.
 
 ### Want to access this Project to perform practical demo then *Follow these project steps*:
 
-#### Stage-01 : Install JDK and Create a Java Springboot application
+#### Stage-01 : Install JDK
 
-#### Stage-02 : Install Jenkins and start Jenkins 
+#### Stage-02 : Install Jenkins and start Jenkins service
 1. Jenkins Installation Prequuisities
 1. After installation, install suggested plugins
 1. Open Jenkins Dashboard and install required plugins – SonarQube Scanner, Docker Pipeline and Kubernetes
@@ -17,10 +17,10 @@ JUnit XML report.
 
 #### Stage-03 : Install SonarQube
 
-#### Stage-04 : Install Docker and Create DockerHub account
+#### Stage-04 : Install Docker, start docker service and create DockerHub account
 1. Create DockerHub account
 
-#### Stage-05 : Now go to jenkins > Manage Jenkins > system > configure JDK, maven, Sonarqube, Docker Pipeline and Kubernetes
+#### Stage-05 : Go to jenkins > Manage Jenkins > system > configure JDK, maven, Sonarqube, Docker Pipeline and Kubernetes
 
 #### Stage-06 : SonarQube integration with Jenkins
 
