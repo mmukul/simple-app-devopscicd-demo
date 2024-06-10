@@ -12,3 +12,8 @@ https://killercoda.com/playgrounds/course/kubernetes-playgrounds
 ![alt text](image-2.png)
 
 ![alt text](image-3.png)
+
+
+## Ancible Playground Lab
+
+https://killercoda.com/het-tanis/course/Ansible-Labs
