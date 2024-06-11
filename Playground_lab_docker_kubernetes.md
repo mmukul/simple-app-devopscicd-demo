@@ -8,4 +8,4 @@
 - [Two Node](https://killercoda.com/playgrounds/course/kubernetes-playgrounds/two-node)
 
 ## Ansible Playground
-- [Ancible Lab](https://killercoda.com/het-tanis/course/Ansible-Labs)
+- [Ansible Lab](https://killercoda.com/het-tanis/course/Ansible-Labs)
