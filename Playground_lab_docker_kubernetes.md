@@ -1,19 +1,11 @@
-## Docker Playground Lab
-https://labs.play-with-docker.com/
-
-![alt text](image.png)
-
-![alt text](image-1.png)
+## Docker Playground
+- [Docker Lab](https://labs.play-with-docker.com)
 
 
-## Kubernetes Playground Lab
-https://killercoda.com/playgrounds/course/kubernetes-playgrounds
+## Kubernetes Playground
+- [One Node](https://killercoda.com/playgrounds/course/kubernetes-playgrounds/one-node-4GB)
 
-![alt text](image-2.png)
+- [Two Node](https://killercoda.com/playgrounds/course/kubernetes-playgrounds/two-node)
 
-![alt text](image-3.png)
-
-
-## Ancible Playground Lab
-
-https://killercoda.com/het-tanis/course/Ansible-Labs
+## Ansible Playground
+- [Ancible Lab](https://killercoda.com/het-tanis/course/Ansible-Labs)
