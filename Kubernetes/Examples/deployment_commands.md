@@ -36,6 +36,12 @@ kubectl describe deployments
 kubectl describe pods
 ```
 
+- Edit deployment yaml
+
+```sh
+kubectl edit deployment/nginx-deployment
+```
+
 - Scaling a Deployment
 
 ```sh
