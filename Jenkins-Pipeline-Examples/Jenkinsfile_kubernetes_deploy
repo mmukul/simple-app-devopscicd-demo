@@ -1,0 +1,70 @@
+pipeline {
+    agent any
+
+    options {
+    // Keep the 1 most recent builds
+    buildDiscarder(logRotator(numToKeepStr:'1'))
+    }
+    
+    tools {
+        maven "MAVEN_HOME"
+    }
+
+    stages{
+        stage('Build Maven'){
+            steps{
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/mmukul/simple-app-devopscicd-demo']]])
+                sh 'mvn clean install'
+            }
+        }
+
+        stage ('Unit Test') {
+            steps {
+                sh 'mvn test' 
+            }
+            post {
+               success {
+                    junit 'target/surefire-reports/**/*.xml'
+                }   
+            }
+        }
+
+        stage('Build Docker Image'){
+            steps{
+                script{
+                    sh 'docker build -t smilemukul/my-app-1.0:v1 .'
+                }
+            }
+        }
+
+        stage('Push image to DockerHub'){
+            steps{
+                script{
+                   withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
+                   sh 'docker login -u smilemukul -p ${dockerhubpwd}'
+                }
+                   sh 'docker push smilemukul/my-app-1.0:v1'
+                }
+            }
+        }
+
+        stage('Deploy to kubernetes') {
+            steps{
+                script{
+                    kubernetesDeploy configs: 'Kubernetes/Examples/deployment_nginx_3pods.yaml', kubeconfigId: 'kubernetes'
+                }
+            }
+        }
+        
+        stage('Cleanup'){
+            steps{
+                script{
+                    sh 'docker rmi docker.io/openjdk:8 smilemukul/my-app-1.0:v1 -f'
+                    echo 'Docker images are successfully removed from the local system'
+                }
+            }
+        }
+    }
+}
+
+        
