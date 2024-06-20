@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-k8s-deployment
+spec:
+  selector:
+    matchLabels:
+      app: nginx-k8s
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: nginx-k8s
+    spec:
+      containers:
+        - name: nginx-k8s
+          image: smilemukul/my-app-1.0:v1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-k8ssvc
+spec:
+  selector:
+    app: nginx-k8s
+  ports:
+    - protocol: "TCP"
+      port: 80
+      targetPort: 80
+  type: NodePort
