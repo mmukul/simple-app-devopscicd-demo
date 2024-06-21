@@ -51,7 +51,8 @@ pipeline {
         stage('Deploy to kubernetes') {
             steps{
                 script{
-                    kubernetesDeploy configs: 'Kubernetes/deploymentservice.yaml', kubeconfigId: 'kubernetes'
+                    sh 'kubectl apply -f Kubernetes/deploymentservice.yaml'
+                    sh 'kubectl get pods'
                 }
             }
         }

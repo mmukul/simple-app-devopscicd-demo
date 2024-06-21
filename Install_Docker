@@ -1,5 +1,8 @@
 ## Install Docker for Jenkins
 
+yum install docker -y
+systemctl restart docker
+systemctl restart docker
 useradd docker
 usermod -a -G docker jenkins
 systemctl restart jenkins
