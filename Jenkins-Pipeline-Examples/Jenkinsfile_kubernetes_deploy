@@ -47,21 +47,20 @@ pipeline {
                 }
             }
         }
-
-        stage('Deploy to kubernetes') {
-            steps{
-                script{
-                    sh 'kubectl apply -f Kubernetes/deploymentservice.yaml'
-                    sh 'kubectl get pods'
-                }
-            }
-        }
         
         stage('Cleanup'){
             steps{
                 script{
                     sh 'docker rmi docker.io/openjdk:8 smilemukul/my-app-1.0:v1 -f'
                     echo 'Docker images are successfully removed from the local system'
+                }
+            }
+        }
+
+        stage('Deploy to kubernetes') {
+            steps{
+                script{
+                    kubernetesDeploy configs: 'Kubernetes/deploymentservice.yaml', kubeconfigId: 'kubernetes'
                 }
             }
         }
