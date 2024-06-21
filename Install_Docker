@@ -1,0 +1,5 @@
+## Install Docker for Jenkins
+
+useradd docker
+usermod -a -G docker jenkins
+systemctl restart jenkins
