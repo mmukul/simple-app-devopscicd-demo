@@ -14,13 +14,9 @@ spec:
     spec:
       containers:
         - name: nginx-k8s
-          image: docker.io/smilemukul/my-app-1.0
+          image: smilemukul/my-app-1.0:v1
           ports:
             - containerPort: 80
-      imagePullSecrets:
-        - name: regcred
-
-
 ---
 
 apiVersion: v1
