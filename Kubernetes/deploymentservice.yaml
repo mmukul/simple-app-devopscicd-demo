@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: nginx-k8s
-          image: docker.io/smilemukul/my-app-1.0:v1
+          image: docker.io/smilemukul/my-app-1.0
           ports:
             - containerPort: 80
       imagePullSecrets:
