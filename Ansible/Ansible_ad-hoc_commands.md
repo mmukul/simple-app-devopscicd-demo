@@ -1,25 +1,25 @@
-## Transferring file to many servers
 
-### Gathering Facts
+### Gather Facts
 
 ```sh
 ansible <TARGET_NODE> -m setup
 ```
 
+## Transfer file
 ```sh
-ansible <TARGET_NODE> -m copy -a "src = /etc/yum.conf dest = /tmp/yum.conf"
+ansible <TARGET_NODE> -m copy -a "src = /path/file dest = /path"
 ```
 
-### Creating new directory
+### Create new directory
 
 ```sh
-ansible <TARGET_NODE> -m file -a "dest = /path/user1/new mode = 777 owner = user1 group = user1 state = directory"
+ansible <TARGET_NODE> -m file -a "dest = /path/dir mode = 644 state = directory"
 ```
 
-### Deleting whole directory and files
+### Delete a file
 
 ```sh
-ansible <TARGET_NODE> -m file -a "dest = /path/user1/new state = absent"
+ansible <TARGET_NODE> -m file -a "dest = /path/file state = absent"
 ```
 
 ### Install Package
