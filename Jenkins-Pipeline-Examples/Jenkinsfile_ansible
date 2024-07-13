@@ -1,0 +1,11 @@
+pipeline {
+    agent any
+    stages {
+        stage('Execute Ansible Playbook') {
+            steps {
+                git 'https://github.com/mmukul/simple-app-devopscicd-demo.git'
+                ansiblePlaybook checkMode: true, colorized: true, credentialsId: 'ansiblenode', installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: 'Ansible/install_package_playbook.yaml', vaultTmpPath: ''
+            }
+        }
+    }
+}
