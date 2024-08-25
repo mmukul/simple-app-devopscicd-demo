@@ -10,7 +10,7 @@ pipeline {
         stage('Get Latest Code') {
 	        steps {
                 echo 'Get Latest Code'
-                git 'https://github.com/mmukul/simple-app-devopscicd-demo.git'
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/mmukul/simple-app-devopscicd-demo']]])
 	    }
 	}
 
