@@ -9,7 +9,8 @@ pipeline {
         stage('Get Latest Code') {
 	   steps {
                 echo 'Get Latest Code'
-                git 'https://github.com/mmukul/simple-app-devopscicd-demo.git'
+		git branch: 'main',
+                url: 'https://github.com/mmukul/simple-app-devopscicd-demo.git'
 	    }
 	}
 
