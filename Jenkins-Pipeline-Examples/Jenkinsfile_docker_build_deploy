@@ -29,16 +29,24 @@ pipeline {
             }
         }
 
-        stage('Build & Push image to DockerHub'){
+        stage('Build Docker Image'){
             steps{
                 script{
-                   withDockerRegistry(credentialsId: 'dockerhub-pwd', url: 'https://hub.docker.com/'){
-                   sh 'docker build -t smilemukul/my-app-1.0:v1 .'
-                   sh 'docker push'
+                    sh 'docker build -t smilemukul/my-app-1.0:v1 .'
                 }
             }
         }
-    }
+
+        stage('Push image to DockerHub'){
+            steps{
+                script{
+                   withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
+                   sh 'docker login -u smilemukul -p ${dockerhubpwd}'
+                }
+                   sh 'docker push smilemukul/my-app-1.0:v1'
+                }
+            }
+        }
 
         stage('Deploy in Container'){
             steps{
