@@ -29,7 +29,7 @@ pipeline {
        stage('SonarQube - Code Quality') {
             steps {
                 withSonarQubeEnv('sonarserver') {
-                    sh 'mvn sonar:sonar'
+                    sh 'mvn sonar:sonar -Dsonar.projectName=Devops'
                 }
             }
         }
