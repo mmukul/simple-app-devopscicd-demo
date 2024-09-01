@@ -30,7 +30,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('sonarserver') {
                     sh ''' mvn sonar:sonar -Dsonar.projectName=Devops -Dsonar.java.binaries=. -Dsonar.projectKey=Devops '''
-                }s
+                }
             }
         }
 
