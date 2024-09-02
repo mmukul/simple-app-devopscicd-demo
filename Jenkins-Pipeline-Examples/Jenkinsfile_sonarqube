@@ -26,7 +26,13 @@ pipeline {
             }
         }
 
-       stage('SonarQube Analysis') {
+        stage('Start Sonarqube Container') {
+            steps {
+                sh "docker start sonarqube"
+            }
+        }
+
+        stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('sonarserver') {
                     sh ''' mvn sonar:sonar -Dsonar.projectName=Devops -Dsonar.java.binaries=. -Dsonar.projectKey=Devops '''
