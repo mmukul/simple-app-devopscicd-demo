@@ -5,3 +5,13 @@ systemctl restart docker
 useradd docker
 usermod -a -G docker jenkins
 systemctl restart jenkins
+
+## Download and Install docker-credential-secretservice
+
+yum install libsecret-1.so. -y
+docker login
+wget -O docker-credential-secretservice https://github.com/docker/docker-credential-helpers/releases/download/v0.8.0/docker-credential-secretservice-v0.8.0.linux-amd64
+chmod +x docker-credential-secretservice
+sudo mv docker-credential-secretservice /usr/local/bin/
+sed -i '0,/{/s/{/{\n\t"credsStore": "secretservice",/' ~/.docker/config.json
+docker logout
