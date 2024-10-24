@@ -1,7 +1,6 @@
 ## Delete Local Branch
 
 git branch -d <branch_name>
-git branch -D <branch_name>
 
 ## Delete Remote Branch
 
