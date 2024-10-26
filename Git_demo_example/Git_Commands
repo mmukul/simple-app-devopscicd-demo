@@ -5,3 +5,6 @@ git branch -d <branch_name>
 ## Delete Remote Branch
 
 git push <remote_name> -d <branch_name>
+
+
+git diff <branch_name>
