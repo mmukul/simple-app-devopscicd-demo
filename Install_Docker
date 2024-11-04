@@ -1,10 +1,13 @@
 ## Install Docker for Jenkins
 
-yum install docker -y
-systemctl restart docker
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+systemctl start docker
+systemctl enable docker
 useradd docker
 usermod -a -G docker jenkins
 systemctl restart jenkins
+
 
 ## Download and Install docker-credential-secretservice
 
