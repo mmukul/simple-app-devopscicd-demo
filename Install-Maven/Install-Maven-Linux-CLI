@@ -2,13 +2,13 @@
 
 ### Run on Jenkins Master and Jenkins Slave using CLI on Linux Terminal ###
 
-yum install -y jre-openjdk
-wget http://mirrors.ibiblio.org/apache/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz -P /opt
+sudo yum install -y java-1.8.0-openjdk-devel
+wget http://mirrors.ibiblio.org/apache/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz -P /opt
 cd /opt
 
-tar xzvf apache-maven-3.9.6-bin.tar.gz
+tar xzvf apache-maven-3.9.9-bin.tar.gz
 
-sudo ln -s /opt/apache-maven-3.9.6 /opt/maven
+sudo ln -s /opt/apache-maven-3.9.9 /opt/maven
 
 cat <<EOF | sudo tee /etc/profile.d/maven.sh
 export JAVA_HOME=/usr/lib/jvm/jre-openjdk
