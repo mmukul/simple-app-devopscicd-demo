@@ -2,8 +2,8 @@
 SRE=`cat /var/lib/jenkins/secrets/initialAdminPassword`
 
 
-## Install on Jenkins Master Node
-yum install -y vim wget epel-release curl java-11-openjdk-devel
+## Install on Jenkins Master Packages
+yum install -y vim wget epel-release https://builds.openlogic.com/downloadJDK/openlogic-openjdk/17.0.13+11/openlogic-openjdk-17.0.13+11-linux-x64-el.rpm
 
 wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 
