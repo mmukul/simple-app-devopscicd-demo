@@ -12,7 +12,7 @@ tar xzvf apache-maven-3.9.9-bin.tar.gz
 sudo ln -s /opt/apache-maven-3.9.9 /opt/maven
 
 cat <<EOF | sudo tee /etc/profile.d/maven.sh
-export JAVA_HOME=/usr/lib/jvm/jre-openjdk
+export JAVA_HOME=/usr/lib/jvm/openlogic-openjdk-17-hotspot
 export MAVEN_HOME=/opt/maven
 export PATH=${MAVEN_HOME}/bin:${PATH}
 EOF
