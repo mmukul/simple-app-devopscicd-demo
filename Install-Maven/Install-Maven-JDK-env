@@ -7,7 +7,7 @@ cd /opt && wget http://mirrors.ibiblio.org/apache/maven/maven-3/3.9.9/binaries/a
 mkdir -p /usr/local/apache-maven
 tar -xvf apache-maven-3.9.9-bin.tar.gz -C /usr/local/apache-maven/
 
-cat <<EOF | sudo tee ~/.bashrc
+cat <<EOF | sudo tee /root/.bashrc
 export MAVEN_HOME=/usr/local/apache-maven/apache-maven-3.9.9 
 export MAVEN=$MAVEN_HOME/bin 
 export JAVA_HOME=/usr/lib/jvm/openlogic-openjdk-17-hotspot
@@ -17,4 +17,4 @@ EOF
 source ~/.bashrc
 
 java -version
-mvn -version
+mvn -v
