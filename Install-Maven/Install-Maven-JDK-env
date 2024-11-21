@@ -16,5 +16,5 @@ EOF
 
 source ~/.bashrc
 
-Java -version
+java -version
 mvn -version
