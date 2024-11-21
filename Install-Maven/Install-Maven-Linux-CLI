@@ -3,8 +3,7 @@
 ### Run on Jenkins Slave using CLI on Linux Terminal ###
 
 
-cd /opt
-wget http://mirrors.ibiblio.org/apache/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz
+cd /opt && wget http://mirrors.ibiblio.org/apache/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz
 mkdir -p /usr/local/apache-maven
 tar -xvf apache-maven-3.9.9-bin.tar.gz -C /usr/local/apache-maven/
 
