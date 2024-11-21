@@ -4,4 +4,4 @@
 Managed Jenkins --> Tools --> JDK installations
 
   Name = JAVA_HOME 
-  JAVA_HOME = /usr/lib/jvm/jre-openjdk
+  JAVA_HOME = /usr/lib/jvm/openlogic-openjdk-17-hotspot/bin/java
