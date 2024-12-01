@@ -15,3 +15,11 @@ docker ps -a
 ## Verify that the container is running
 
 <public_ip>:8080
+
+## Tag your image
+
+docker tag IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG]
+
+## Docker push using same tag
+
+docker push NAME[:TAG]
