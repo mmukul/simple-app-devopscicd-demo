@@ -2,8 +2,6 @@
 
 docker build -t <new_image_name> .
 
-docker images
-
 ## Build and deploy the container
 
 docker run -d --name <name-container> -p 8081:80 <new_image_name>
