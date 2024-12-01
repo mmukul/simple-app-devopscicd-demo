@@ -16,10 +16,14 @@ docker ps -a
 
 <public_ip>:8080
 
+## Login to your docker account
+
+docker login --username username
+
 ## Tag your image
 
-docker tag IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG]
+docker tag IMAGE USERNAME/NAME[:TAG]
 
 ## Docker push using same tag
 
-docker push NAME[:TAG]
+docker push USERNAME/NAME[:TAG]
