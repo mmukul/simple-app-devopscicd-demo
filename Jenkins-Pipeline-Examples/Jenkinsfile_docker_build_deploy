@@ -61,7 +61,7 @@ pipeline {
             steps{
                 script{
                     sh 'docker rmi docker.io/openjdk:8 smilemukul/my-app-1.0:v1 -f'
-                    sh 'docker rm laughing_dijkstra'
+                    sh 'docker rm hardcore_engelbart'
                     echo 'Docker images and container are successfully removed from the local system'
                 }
             }
