@@ -40,7 +40,7 @@ pipeline {
         stage('Push image to DockerHub'){
             steps{
                 script{
-                   withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
+                   withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhubpwd')]) {
                    sh 'docker login -u smilemukul -p ${dockerhubpwd}'
                 }
                    sh 'docker push smilemukul/my-app-1.0:v1'
@@ -61,7 +61,6 @@ pipeline {
             steps{
                 script{
                     sh 'docker rmi docker.io/openjdk:8 smilemukul/my-app-1.0:v1 -f'
-                    sh 'docker rm laughing_dijkstra'
                     echo 'Docker images and container are successfully removed from the local system'
                 }
             }

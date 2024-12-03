@@ -9,7 +9,7 @@ systemctl enable docker
 firewall-cmd --permanent --add-port=9000/tcp
 firewall-cmd --reload
 
-docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 owasp/sonarqube
+docker run -d --name sonarqube -p 9000:9000 sonarqube:lts-community
 
 docker images
 docker ps
