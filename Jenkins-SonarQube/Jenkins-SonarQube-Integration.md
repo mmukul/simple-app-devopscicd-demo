@@ -7,7 +7,7 @@
 
 [SonarQube extension for Jenkins](https://plugins.jenkins.io/sonar/ "SonarQube extension for Jenkins") version 2.11 or later is required.
 
-Proceed as follows:
+Proceed with 1st Step:
 
 1.  From the Jenkins Dashboard, navigate to **Manage Jenkins** > **Manage Plugins** and install the **SonarQube Scanner** plugin.
 2.  Back at the Jenkins Dashboard, navigate to **Credentials** > **System** from the left navigation.
@@ -17,6 +17,10 @@ Proceed as follows:
     -   **Scope**: Global
     -   **Secret**: Generate a token at **User** > **My Account** > **Security** in SonarQube, and copy and paste it here.
 5.  Click **OK**.
+
+
+Proceed with 2nd Step:
+
 6.  From the Jenkins Dashboard, navigate to **Manage Jenkins > Configure System**.
 7.  From the **SonarQube Servers** section, click **Add SonarQube**. Add the following information:
     -   **Name**: Give a unique name to your SonarQube instance.
